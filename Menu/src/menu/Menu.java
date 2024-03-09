@@ -24,6 +24,7 @@ public class Menu {
 
             while (x == 0) {
                 x = sm.nuevoMenu(y);
+                System.out.println("x "+x);
 
             }
 
