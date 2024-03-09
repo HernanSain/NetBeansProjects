@@ -19,6 +19,7 @@ public class Menu {
     public static void main(String[] args) {
         Scanner leer = new Scanner(System.in);
         ServiMenu sm = new ServiMenu();
+        //version try / while 
         int x = 0;
         try {
             while (x == 0) {
