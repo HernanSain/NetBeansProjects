@@ -23,7 +23,7 @@ public class Menu {
         int y = 0;
 
             while (x == 0) {
-                x = sm.nuevoMenu(y);
+                x = sm.nuevoMenu();
                 System.out.println("x "+x);
 
             }
