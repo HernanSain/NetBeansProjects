@@ -15,23 +15,27 @@ public class ServiMenu {
 
     Scanner leer = new Scanner(System.in);
 
-    public int nuevoMenu(int d)  {
+    public int nuevoMenu(int d) {
         int x = 0;
-        int r = 0;
-        while (r == 0) {
-            System.out.println("1:sumar. 2:restar, 3:salir");
-            d = leer.nextInt();
-            switch (d) {
-                case 1:
-                    System.out.println("suma");
-                    break;
-                case 2:
-                    System.out.println("resta");
-                    break;
-                case 3:
-                    r = 1;
-                    x = 1;
-                    break;
+        while (x == 0) {
+            try {
+                System.out.println("1:sumar. 2:restar, 3:salir");
+                d = leer.nextInt();
+                switch (d) {
+                    case 1:
+                        System.out.println("suma");
+                        break;
+                    case 2:
+                        System.out.println("resta");
+                        break;
+                    case 3:
+                        x = 1;
+                        break;
+                }
+            } catch (Exception e) {
+                System.out.println("debe ser un entero");
+                d = 0;
+                x=1;
             }
         }
         return x;
