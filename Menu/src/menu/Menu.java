@@ -20,16 +20,17 @@ public class Menu {
         Scanner leer = new Scanner(System.in);
         ServiMenu sm = new ServiMenu();
         int x = 0;
-        try {
+
             while (x == 0) {
+                try{
                 x = sm.nuevoMenu();
                 System.out.println("x " + x);
+                }catch(Exception e){
+                    
+                }
 
             }
-        } catch (Exception e) {
-            System.out.println("debe ser un entero ");
-            System.out.println("x " + x);
-        }
+
 
     }
 }
