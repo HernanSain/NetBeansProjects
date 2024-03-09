@@ -15,7 +15,7 @@ public class ServiMenu {
 
     Scanner leer = new Scanner(System.in);
 
-    public int nuevoMenu(int d) throws Exception {
+    public int nuevoMenu(int d)  {
         int x = 0;
         int r = 0;
         while (r == 0) {

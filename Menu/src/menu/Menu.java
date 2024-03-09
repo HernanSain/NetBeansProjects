@@ -21,20 +21,11 @@ public class Menu {
         ServiMenu sm = new ServiMenu();
         int x = 0;
         int y = 0;
-        try {
-             x = 0;
-             y = 0;
+
             while (x == 0) {
                 x = sm.nuevoMenu(y);
-                System.out.println("x " + x);
-                System.out.println("y " + y);
+
             }
-        } catch (Exception e) {
-            System.out.println("must be an integer");
-            x = 0;
-            y = 0;
-        } finally {
-            y = 0;
-        }
+
     }
 }
