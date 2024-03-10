@@ -15,9 +15,9 @@ public class ServiMenu {
 
     Scanner leer = new Scanner(System.in);
 
-    public int nuevoMenu()throws Exception {
+    public int nuevoMenu() {
         int x = 0;
-        while (x == 0) {
+        try {
             System.out.println("1:sumar. 2:restar, 3:salir");
             x = leer.nextInt();
             switch (x) {
@@ -33,7 +33,10 @@ public class ServiMenu {
                     x = 1;
                     break;
             }
+        } catch (Exception e) {
+            leer.nextLine();
         }
+
         return x;
     }
 }

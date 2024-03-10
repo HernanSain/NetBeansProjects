@@ -5,6 +5,7 @@
  */
 package menu;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -20,15 +21,9 @@ public class Menu {
         Scanner leer = new Scanner(System.in);
         ServiMenu sm = new ServiMenu();
         int x = 0;
-        try {
-            while (x == 0) {
-                x = sm.nuevoMenu();
-                System.out.println("x " + x);
-
-            }
-        } catch (Exception e) {
-            System.out.println("debe ser un entero ");
-            System.out.println("x " + x);
+      
+        while (x == 0) {
+            x = sm.nuevoMenu();
         }
 
     }
