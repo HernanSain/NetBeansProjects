@@ -22,7 +22,8 @@ public class ServiPrimo {
         try {
             System.out.println("ingrese un entero mayor que cero para saber si es primo o no ");
             n = leer.nextInt();
-//            primo = siEsPrimo(n);
+            siEsPrimo sep = new siEsPrimo();
+            primo = sep.verSiEsPrimo(n);
             System.out.println("el numero ingresado es primo " + primo);
         } catch (Exception e) {
             leer.nextLine();
