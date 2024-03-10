@@ -12,15 +12,26 @@ import java.util.Scanner;
  * @author John
  */
 public class ServiPrimo {
-    Scanner leer = new Scanner(System.in);
-    public int ingreseNumero(){
-        int control = 0;
 
-        System.out.println("ingrese un entero");
-        int n =leer.nextInt();
-        return n;
-            
+    Scanner leer = new Scanner(System.in);
+
+    public void ingreseNumero() {
+        int n = 0;
+        boolean primo = false;
+        while (n==0){
+        try {
+            System.out.println("ingrese un entero mayor que cero para saber si es primo o no ");
+            n = leer.nextInt();
+//            primo = siEsPrimo(n);
+            System.out.println("el numero ingresado es primo " + primo);
+        } catch (Exception e) {
+            leer.nextLine();
+            n = 0;
+            System.out.println("must be an integer");
+        }    
+        }
         
+
     }
-    
+
 }

@@ -19,12 +19,7 @@ public class Primo {
      */
     public static void main(String[] args) {
         ServiPrimo sp = new ServiPrimo();
-        int primo;
-        try {
-            primo = sp.ingreseNumero();
-        } catch (Exception e) {
-            System.out.println("mast be an integer");
-        }
+       sp.ingreseNumero();
     }
 
 }
