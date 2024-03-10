@@ -10,10 +10,15 @@ package servicios;
  * @author John
  */
 public class siEsPrimo {
-    public boolean verSiEsPrimo(int x){
-        boolean primo = false;
-        
+
+    public boolean verSiEsPrimo(int x) {
+        boolean primo = true;
+        for (int i = 2; i < x; i++) {
+            if (x % i == 0) {
+                primo = false;
+            }
+        }
         return primo;
     }
-    
+
 }
