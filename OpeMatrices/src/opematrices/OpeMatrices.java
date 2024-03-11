@@ -31,8 +31,15 @@ public class OpeMatrices {
                 System.out.println("must be  an integer");
             }
         }
+        
         ServMatrix sm = new ServMatrix();
-        sm.llenaMatrixA(filas, columnas);
+       int[][]A = sm.llenaMatrixA(filas, columnas);
+                for (int i = 0; i < filas; i++) {
+            for (int j = 0; j < columnas; j++) {
+                System.out.print(A[i][j] + " ");
+            }
+            System.out.println("");
+        }
     }
 
 }
