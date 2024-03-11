@@ -18,13 +18,27 @@ public class Primo {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        Scanner leer = new Scanner(System.in);
         ServiPrimo sp = new ServiPrimo();
-        int primo;
-        try {
-            primo = sp.ingreseNumero();
-        } catch (Exception e) {
-            System.out.println("mast be an integer");
+        int q = 0;
+        while (q == 0) {
+            try {
+                System.out.println("1:ingresar numero, 2:salir");
+                q = leer.nextInt();
+                switch (q) {
+                    case 1:
+                        sp.ingreseNumero();
+                        q = 0;
+                        break;
+                    case 2:
+                        q = 2;
+                        break;
+                }
+            } catch (Exception e) {
+                leer.nextLine();
+            }
         }
+
     }
 
 }

@@ -5,6 +5,7 @@
  */
 package menu;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -21,6 +22,7 @@ public class Menu {
         ServiMenu sm = new ServiMenu();
         //version while / try  
         int x = 0;
+<<<<<<< HEAD
         while (x == 0) {
             try {
                 x = sm.nuevoMenu();
@@ -30,6 +32,11 @@ public class Menu {
                 System.out.println("x " + x);
                 x = 1;
             } 
+=======
+      
+        while (x == 0) {
+            x = sm.nuevoMenu();
+>>>>>>> 3d970bf2de65d8621371ef6d4e6238a387f5c6da
         }
     }
 }
