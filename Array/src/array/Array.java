@@ -12,21 +12,25 @@ public class Array {
 
     public static void main(String[] args) {
         int[] myArray = new int[5];
-        int ctrl=0;
-        while(ctrl==0){
-        try {
-        System.out.println("write in an Integer, 99:salir");
-        int n = leer.nextInt();
-        myArray[0] = n;
-        System.out.println("myArray[0] "+myArray[0]); 
-        if(n==99){
-            ctrl=1;
-        }
-        } catch (InputMismatchException e) {
-            System.out.println("must be an integer");
-            leer.nextLine();
-        }
-            
+        int ctrl = 0;
+        while (ctrl == 0) {
+            try {
+                System.out.println("write in an Integer, 99:salir");
+                int n = leer.nextInt();
+                myArray[0] = n;
+                System.out.println("myArray[0] " + myArray[0]);
+                if (n == 99) {
+                    ctrl = 1;
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("must be an integer");
+                leer.nextLine();
+            }
+            try {
+                myArray[6] = 8;
+            } catch (ArrayIndexOutOfBoundsException e) {
+                System.out.println("Indice del arreglo extralimitado");
+            }
         }
 
     }
