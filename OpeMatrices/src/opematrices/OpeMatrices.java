@@ -31,12 +31,28 @@ public class OpeMatrices {
                 System.out.println("must be  an integer");
             }
         }
-        
+
         ServMatrix sm = new ServMatrix();
-       int[][]A = sm.llenaMatrixA(filas, columnas);
-                for (int i = 0; i < filas; i++) {
+        int[][] A = sm.llenaMatrixA(filas, columnas);
+        for (int i = 0; i < filas; i++) {
             for (int j = 0; j < columnas; j++) {
                 System.out.print(A[i][j] + " ");
+            }
+            System.out.println("");
+        }
+        int[][] B = sm.llenaMatrixB(filas, columnas);
+        System.out.println("");
+        for (int i = 0; i < filas; i++) {
+            for (int j = 0; j < columnas; j++) {
+                System.out.print(B[i][j] + " ");
+            }
+            System.out.println("");
+        }
+        int[][] C = sm.sumaMatrixes(A, B, filas, columnas);
+        System.out.println("");
+        for (int i = 0; i < filas; i++) {
+            for (int j = 0; j < columnas; j++) {
+                System.out.print(C[i][j] + " ");
             }
             System.out.println("");
         }

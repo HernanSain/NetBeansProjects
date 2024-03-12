@@ -18,7 +18,7 @@ public class ServMatrix {
                 int ctrl = 0;
                 while (ctrl == 0) {
                     try {
-                        System.out.println("Input an integer between 0-99 fila "+(i+1)+" columna "+(+j+1));
+                        System.out.println("Input an integer between 0-99 fila " + (i + 1) + " columna " + (+j + 1));
                         A[i][j] = leer.nextInt();
                         ctrl = 1;
                         if (A[i][j] < 0 || A[i][j] > 99) {
@@ -35,5 +35,28 @@ public class ServMatrix {
         }
 
         return A;
+    }
+
+    public int[][] llenaMatrixB(int filas, int columnas) {
+        int[][] B = new int[filas][columnas];
+        for (int i = 0; i < filas; i++) {
+            for (int j = 0; j < columnas; j++) {
+                long valor = (Math.round(Math.random() * 99));
+                B[i][j] = (int) valor;
+            }
+
+        }
+        return B;
+    }
+
+    public int[][] sumaMatrixes(int[][] A, int[][] B, int filas, int columnas) {
+        System.out.println("suma de matrix A + matrix B");
+        int[][] C = new int[filas][columnas];
+        for (int i = 0; i < filas; i++) {
+            for (int j = 0; j < columnas; j++) {
+                C[i][j] = A[i][j] + B[i][j];
+            }
+        }
+    return C;
     }
 }
