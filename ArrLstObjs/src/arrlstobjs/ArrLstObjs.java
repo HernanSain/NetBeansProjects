@@ -24,9 +24,8 @@ public class ArrLstObjs {
                         al.add(sm.nuevoAlumno());
                         break;
                     case 2:
-                        for (int i = 0; i < al.size(); i++) {
-                            System.out.println(al.get(i).getNombre()+" Edad "+al.get(i).getEdad());
-                        }
+                        int elije =sm.listarAlumnosPor();
+                        
                         break;
                     case 3:
                         ctrl = 1;
