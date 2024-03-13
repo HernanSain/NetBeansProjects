@@ -1,21 +1,34 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package arrlstobjs;
 
-/**
- *
- * @author John
- */
+import java.util.Scanner;
+import servicios.ServMain;
+
 public class ArrLstObjs {
 
-    /**
-     * @param args the command line arguments
-     */
+static Scanner leer = new Scanner(System.in);
     public static void main(String[] args) {
-        // TODO code application logic here
+        ServMain sm = new ServMain();
+        int ctrl = 0;
+        int menu =0;
+        try {
+            while (ctrl==0){
+                System.out.println("1:Ingredsar Alumnos; 2:Listar Alumnos; 3:Salir");
+                menu=leer.nextInt();
+                switch(menu){
+                    case 1:
+                     sm.nuevoAlumno();
+                     break;
+                    case 2:
+                        break;
+                    case 3:
+                        ctrl=1;
+                        break;
+                }
+            }
+        } catch (Exception e) {
+        leer.nextLine();
+        }
     }
     
 }

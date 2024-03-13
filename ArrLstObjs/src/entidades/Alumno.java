@@ -12,6 +12,9 @@ package entidades;
 public class Alumno {
     private String nombre;
     private int edad;
+    public Alumno(){
+   
+    }
 
     public Alumno(String nombre, int edad) {
         this.nombre = nombre;
