@@ -13,26 +13,37 @@ public class ArrLstObjs {
         ServMain sm = new ServMain();
         Alumno a = new Alumno();
         ArrayList<Alumno> al = new ArrayList<Alumno>();
-        int ctrl = 0;
         int menu = 0;
         try {
-            while (ctrl == 0) {
+            while (menu == 0) {
                 System.out.println("1:Ingresar Alumnos; 2:Listar Alumnos; 3:Salir");
                 menu = leer.nextInt();
                 switch (menu) {
                     case 1:
                         al.add(sm.nuevoAlumno());
+                        menu=0;
                         break;
                     case 2:
-                        int elije =sm.listarAlumnosPor();
-                        
+                        menu=0;
+                        int elije = sm.listarAlumnosPor();
+                        switch (elije) {
+                            case 1:
+                                sm.listaAlumnosPorNombre(al);
+                                break;
+                            case 2:
+                                sm.listaAlumnosPorEdad(al);
+                                break;
+                        }
                         break;
                     case 3:
-                        ctrl = 1;
+                        menu = 1;
                         break;
+                    default:
+                        menu = 0;
                 }
             }
         } catch (Exception e) {
+            menu = 0;
             leer.nextLine();
         }
     }

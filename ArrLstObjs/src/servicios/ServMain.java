@@ -16,18 +16,19 @@ public class ServMain {
     public Alumno nuevoAlumno() {
         Alumno a = new Alumno();
         int ctrl = 0;
-        try {
-            while (ctrl == 0) {
+
+        while (ctrl == 0) {
+            try {
                 System.out.println("Nombre:");
                 a.setNombre(leer.next());
                 System.out.println("Edad (en números)");
                 a.setEdad(leer.nextInt());
                 ctrl = 1;
+            } catch (Exception e) {
+                System.out.println("La edad debe estar en numeros enteros");
+                leer.nextLine();
+                ctrl = 0;
             }
-        } catch (Exception e) {
-            System.out.println("La edad debe estar en numeros enteros");
-            ctrl = 0;
-            leer.nextLine();
         }
         return a;
     }
@@ -48,22 +49,24 @@ public class ServMain {
                     case 3:
                         elije = 3;
                         break;
+                    default:
+                        elije = 0;
                 }
             }
         } catch (Exception e) {
-            System.out.println("must enter an integer idiot!");
-            elije=0;
+            System.out.println("must enter an integer");
+            elije = 0;
             leer.nextLine();
         }
         return elije;
     }
 
     public void listaAlumnosPorNombre(ArrayList<Alumno> al) {
-
+        System.out.println("lista alumnos por nombre");
     }
 
     public void listaAlumnosPorEdad(ArrayList<Alumno> al) {
-
+        System.out.println("lista alumnos por edad");
     }
 
 }
