@@ -6,27 +6,64 @@
 package servicios;
 
 import entidades.Alumno;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ServMain {
+
     static Scanner leer = new Scanner(System.in);
-    public Alumno nuevoAlumno(){
-            Alumno a = new Alumno();
-            int ctrl=0;
-            try {
-            while(ctrl==0){
-            System.out.println("Nombre:");
-            a.setNombre(leer.next());
-            System.out.println("Edad (en números)");
-            a.setEdad(leer.nextInt());
-            ctrl=1;
-            }            
+
+    public Alumno nuevoAlumno() {
+        Alumno a = new Alumno();
+        int ctrl = 0;
+        try {
+            while (ctrl == 0) {
+                System.out.println("Nombre:");
+                a.setNombre(leer.next());
+                System.out.println("Edad (en números)");
+                a.setEdad(leer.nextInt());
+                ctrl = 1;
+            }
         } catch (Exception e) {
-                System.out.println("La edad debe estar en numeros enteros");
-                ctrl=0;
-                leer.nextLine();
+            System.out.println("La edad debe estar en numeros enteros");
+            ctrl = 0;
+            leer.nextLine();
         }
-            return a;
+        return a;
     }
-        
+
+    public int listarAlumnosPor() {
+        int elije = 0;
+        try {
+            while (elije == 0) {
+                System.out.println("1:por nombre; 2:por edad; 3:salir");
+                elije = leer.nextInt();
+                switch (elije) {
+                    case 1:
+                        elije = 1;
+                        break;
+                    case 2:
+                        elije = 2;
+                        break;
+                    case 3:
+                        elije = 3;
+                        break;
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("must enter an integer idiot!");
+            elije=0;
+            leer.nextLine();
+        }
+        return elije;
+    }
+
+    public void listaAlumnosPorNombre(ArrayList<Alumno> al) {
+
+    }
+
+    public void listaAlumnosPorEdad(ArrayList<Alumno> al) {
+
+    }
+
 }
