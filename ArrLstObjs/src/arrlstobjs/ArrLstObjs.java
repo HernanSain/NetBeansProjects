@@ -1,34 +1,41 @@
-
 package arrlstobjs;
 
+import entidades.Alumno;
+import java.util.ArrayList;
 import java.util.Scanner;
 import servicios.ServMain;
 
 public class ArrLstObjs {
 
-static Scanner leer = new Scanner(System.in);
+    static Scanner leer = new Scanner(System.in);
+
     public static void main(String[] args) {
         ServMain sm = new ServMain();
+        Alumno a = new Alumno();
+        ArrayList<Alumno> al = new ArrayList<Alumno>();
         int ctrl = 0;
-        int menu =0;
+        int menu = 0;
         try {
-            while (ctrl==0){
-                System.out.println("1:Ingredsar Alumnos; 2:Listar Alumnos; 3:Salir");
-                menu=leer.nextInt();
-                switch(menu){
+            while (ctrl == 0) {
+                System.out.println("1:Ingresar Alumnos; 2:Listar Alumnos; 3:Salir");
+                menu = leer.nextInt();
+                switch (menu) {
                     case 1:
-                     sm.nuevoAlumno();
-                     break;
+                        al.add(sm.nuevoAlumno());
+                        break;
                     case 2:
+                        for (int i = 0; i < al.size(); i++) {
+                            System.out.println(al.get(i).getNombre()+" Edad "+al.get(i).getEdad());
+                        }
                         break;
                     case 3:
-                        ctrl=1;
+                        ctrl = 1;
                         break;
                 }
             }
         } catch (Exception e) {
-        leer.nextLine();
+            leer.nextLine();
         }
     }
-    
+
 }
