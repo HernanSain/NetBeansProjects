@@ -7,6 +7,7 @@ package collections_3;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.Scanner;
 
 /**
@@ -38,9 +39,17 @@ ArrayList<String> an = new ArrayList<String>();
         for (int i = 0; i < 10; i++) {
             an.add(nombre[i]);
         }
+        System.out.println("lista ordenada mediante Collections");
         Collections.sort(an);
-        for (int i = 0; i < 10; i++) {
-            System.out.println(an.get(i));
+//        for (int i = 0; i < 10; i++) {
+//            System.out.println(an.get(i));
+//        }
+        System.out.println("listad usando iterator");
+        Iterator lit = an.iterator();
+        for (Iterator<String> iterator = an.iterator(); iterator.hasNext();) {
+            String next = iterator.next();
+            System.out.println(next);
+            
         }
     }
 
