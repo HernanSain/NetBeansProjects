@@ -3,28 +3,27 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package polymorph;
+package interface2;
 
-import entities.Animal;
-import entities.Cat;
-import entities.Pig;
+import entities.Automovil;
+import entities.Camion;
 
 /**
  *
  * @author John
  */
-public class Polymorph {
+public class Interface2 {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Animal a = new Animal();
-        Animal p = new Pig();
-        Animal c = new Cat();
-        a.sonido();
-        p.sonido();
-        c.sonido();
+        Automovil a = new Automovil();
+        Camion c = new Camion();
+        a.estableceTipo();
+        a.estableceMarca();
+        c.estableceTipo();
+        c.estableceMarca();
     }
 
 }

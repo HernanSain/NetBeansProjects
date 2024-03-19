@@ -3,28 +3,26 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package polymorph;
+package pkginterface;
 
-import entities.Animal;
 import entities.Cat;
-import entities.Pig;
+import entities.Dog;
 
 /**
  *
  * @author John
  */
-public class Polymorph {
+public class Interface {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Animal a = new Animal();
-        Animal p = new Pig();
-        Animal c = new Cat();
-        a.sonido();
-        p.sonido();
-        c.sonido();
+        Dog d = new Dog();
+        Cat c = new Cat();
+        System.out.print("Dog ");
+        d.animalSound();
+        d.animalRun();
     }
 
 }
