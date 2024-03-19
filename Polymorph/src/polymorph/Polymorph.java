@@ -20,7 +20,7 @@ public class Polymorph {
      */
     public static void main(String[] args) {
         Animal a = new Animal();
-        Animal p = new Pig();
+        Pig p = new Pig();
         Animal c = new Cat();
         a.sonido();
         p.sonido();
