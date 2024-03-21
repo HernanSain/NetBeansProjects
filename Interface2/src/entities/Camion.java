@@ -9,10 +9,11 @@ package entities;
  *
  * @author John
  */
-public class Cat extends Animal {
-    @Override
-    public void sonido(){
-        System.out.println("meow");
+public class Camion implements Vehicle{
+    public void estableceTipo(){
+        System.out.println("Tipo camion");
     }
-    
+    public void estableceMarca(){
+        System.out.println("Marca GM");
+    }
 }

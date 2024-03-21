@@ -10,6 +10,7 @@ package entities;
  * @author John
  */
 public class Pig extends Animal{
+    @Override
     public void sonido(){
         System.out.println("oink");
     }
