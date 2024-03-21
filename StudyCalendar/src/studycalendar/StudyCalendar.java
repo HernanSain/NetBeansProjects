@@ -18,12 +18,14 @@ public class StudyCalendar {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Calendar c = Calendar.getInstance();
-        System.out.println(c);
-        System.out.println(c.getTimeInMillis());
-        Date fecha = c.getTime();
+        Calendar c = Calendar.getInstance();//intance of objet calendar c with the present time default format
+        System.out.println("objet calendar c "+c);//shows the object calendar c 
+        System.out.println("milisegundos desde el orogen: "+c.getTimeInMillis());
+        System.out.println("fecha calendar "+c.getTime());
+//        c.set(2025, 2, 21, 19, 36, 30);
+//        Date fecha = c.getTime();
+//        System.out.println(fecha);
 
-        
     }
 
 }
