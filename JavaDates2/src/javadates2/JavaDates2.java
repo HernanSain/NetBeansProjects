@@ -1,32 +1,23 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package javadates2;
 
-//import java.util.Calendar;
+import java.time.LocalDateTime;
 import java.util.Date;
-
-/**
- *
- * @author John
- */
+import java.time.format.DateTimeFormatter;
 public class JavaDates2 {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
+ 
+//        System.out.println(t1);
         Date f = new Date();
-        long t = f.getTime();
-        System.out.println(t);
-        f.setTime(t);
         System.out.println(f);
-        t += 100000000;
-        System.out.println(t);
-        f.setTime(t);
-        System.out.println(f);
+        System.out.println(f.getTime());
+        LocalDateTime t1 = LocalDateTime.now();
+        System.out.println(t1);
+  
+        DateTimeFormatter ff = DateTimeFormatter.ofPattern("E MM dd yyyy HH mm ss");
+        String f2 = t1.format(ff);
+        System.out.println(f2+"");
+        
     }
 
 }
