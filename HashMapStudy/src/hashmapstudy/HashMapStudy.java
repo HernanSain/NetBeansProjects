@@ -10,13 +10,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class HashMapStudy {
-    
+
     public static void main(String[] args) {
         HashMap<String, String> cc = new HashMap<String, String>();
         ServiHash sh = new ServiHash();
         sh.iniciaEnums(cc);
-        sh.listaHash(cc);
-
+//        sh.listaHash(cc);
+  sh.elijo(cc);
+        
     }
-    
+
 }

@@ -15,8 +15,9 @@ import java.util.Map;
  * @author John
  */
 public class ServiHash {
-    public HashMap<String,String> iniciaEnums(HashMap<String,String> cc){
-                
+
+    public HashMap<String, String> iniciaEnums(HashMap<String, String> cc) {
+
         Pais p1 = Pais.Argentina;
         Capital c1 = Capital.Buenos_Aires;
         cc.put(p1.name(), c1.name());
@@ -39,13 +40,27 @@ public class ServiHash {
 
         return cc;
     }
-    public void listaHash(HashMap<String,String> cc){
-                for (Map.Entry<String, String> entry : cc.entrySet()) {
+
+    public void listaHash(HashMap<String, String> cc) {
+//        HashMap<Integer, String> ih = new HashMap<Integer, String>();
+        int contador = 1;
+        for (Map.Entry<String, String> entry : cc.entrySet()) {
             String key = entry.getKey();
             String value = entry.getValue();
-
-            System.out.println(key + " " + value);
+            System.out.println(contador + " " + key);
+            contador++;
 
         }
+    }
+
+    public String elijo(HashMap<String, String> cc) {
+        String key = "";
+        listaHash(cc);
+        try {
+            System.out.println("elija un numero y adivine la capital del país correspondiente");
+        } catch (Exception e) {
+        }
+
+        return key;
     }
 }
