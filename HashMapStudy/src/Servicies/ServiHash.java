@@ -47,9 +47,9 @@ public class ServiHash {
     public void listaHash(HashMap<String, String> cc) {
 //        HashMap<Integer, String> ih = new HashMap<Integer, String>();
         int contador = 1;
-        for (Map.Entry<String, String> entry : cc.entrySet()) {
-            String key = entry.getKey();
-            String value = entry.getValue();
+        for (Map.Entry<String, String> algo : cc.entrySet()) {
+            String key = algo.getKey();
+            String value = algo.getValue();
             System.out.println(contador + " " + key + " "+value);
             contador++;
 
