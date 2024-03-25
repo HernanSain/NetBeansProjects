@@ -9,12 +9,15 @@ import hashmapstudy.Capital;
 import hashmapstudy.Pais;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 /**
  *
  * @author John
  */
 public class ServiHash {
+
+    static Scanner leer = new Scanner(System.in).useDelimiter("\n");
 
     public HashMap<String, String> iniciaEnums(HashMap<String, String> cc) {
 
@@ -31,7 +34,7 @@ public class ServiHash {
         cc.put(p3.name(), c3.name());
 
         Pais p4 = Pais.Paraguay;
-        Capital c4 = Capital.AsunciÃ³n;
+        Capital c4 = Capital.Asunción;
         cc.put(p4.name(), c4.name());
 
         Pais p5 = Pais.Uruguay;
@@ -47,20 +50,80 @@ public class ServiHash {
         for (Map.Entry<String, String> entry : cc.entrySet()) {
             String key = entry.getKey();
             String value = entry.getValue();
-            System.out.println(contador + " " + key);
+            System.out.println(contador + " " + key + " "+value);
             contador++;
 
         }
     }
 
-    public String elijo(HashMap<String, String> cc) {
-        String key = "";
+    public void elijo(HashMap<String, String> cc) {
+        String pais = "";
         listaHash(cc);
-        try {
-            System.out.println("elija un numero y adivine la capital del paÃ­s correspondiente");
-        } catch (Exception e) {
+        int n = 0;
+        while (n == 0) {
+            try {
+                System.out.println("elija un pais por numero. Salir:99");
+                n = leer.nextInt();
+                String respuesta = "";
+                switch (n) {
+                    case 1:
+                        System.out.println("la capital de Brasil es:");
+                        respuesta = leer.next();
+                        if (respuesta.equals("Brasilia")) {
+                            System.out.println("correcto");
+                        } else {
+                            System.out.println("incorrecto");
+                        }
+                        n = 0;
+                        break;
+                    case 2:
+                        System.out.println("la capital de Argentina es:");
+                        respuesta = leer.next();
+                        if (respuesta.equals("Buenos_Aires")) {
+                            System.out.println("correcto");
+                        } else {
+                            System.out.println("incorrecto");
+                        }
+                        n = 0;
+                        break;
+                    case 3:
+                        System.out.println("la capital de Uruguay es:");
+                        respuesta = leer.next();
+                        if (respuesta.equals("Montevideo")) {
+                            System.out.println("correcto");
+                        } else {
+                            System.out.println("incorrecto");
+                        }
+                        n = 0;
+                        break;
+                    case 4:
+                        System.out.println("la capital de Bolivia es:");
+                        respuesta = leer.next();
+                        if (respuesta.equals("La_Paz")) {
+                            System.out.println("correcto");
+                        } else {
+                            System.out.println("incorrecto");
+                        }
+                        n = 0;
+                        break;
+                    case 5:
+                        System.out.println("la capital de Paraguay es:");
+                        respuesta = leer.next();
+                        if (!respuesta.equals("Asunción")) {
+                            System.out.println("incorrecto");
+                        } else {
+                            System.out.println("correcto");
+                        }
+                        n = 0;
+                        break;
+                    case 99:
+                        n = 1;
+                        break;
+                }
+            } catch (Exception e) {
+                leer.nextLine();
+            }
         }
 
-        return key;
     }
 }

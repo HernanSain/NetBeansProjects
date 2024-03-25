@@ -10,5 +10,5 @@ package hashmapstudy;
  * @author John
  */
 public enum Capital {
-    Buenos_Aires,AsunciÃ³n,La_Paz,Montevideo,Brasilia
+    Buenos_Aires,Asunción,La_Paz,Montevideo,Brasilia
 }

@@ -15,9 +15,9 @@ public class HashMapStudy {
         HashMap<String, String> cc = new HashMap<String, String>();
         ServiHash sh = new ServiHash();
         sh.iniciaEnums(cc);
-//        sh.listaHash(cc);
-  sh.elijo(cc);
-        
+
+        sh.elijo(cc);
+
     }
 
 }
