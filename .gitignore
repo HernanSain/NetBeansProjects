@@ -4,6 +4,7 @@
 /Array/build/
 /OpeMatrices/nbproject/private/
 /OpeMatrices/build/
+<<<<<<< HEAD
 /InvMatrix/nbproject/private/
 /InvMatrix/build/
 /ArrLstObjs/nbproject/private/
@@ -55,3 +56,14 @@
 /HashMapStudy/build/
 /HashSetStudy/nbproject/private/
 /HashSetStudy/build/
+=======
+/Herencia/nbproject/private/
+/Herencia/build/
+/Inner/nbproject/private/
+/Inner/build/
+<<<<<<< HEAD
+/ComparatorStudy/nbproject/private/
+=======
+>>>>>>> main
+>>>>>>> b4b80462aa0f36625d1b4c7ce31bbf22774b8e1f
+/ComparatorStudy/build/
