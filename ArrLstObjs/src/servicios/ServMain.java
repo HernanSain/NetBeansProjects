@@ -63,11 +63,25 @@ public class ServMain {
     }
 
     public void listaAlumnosPorNombre(ArrayList<Alumno> al) {
+
         System.out.println("lista alumnos por nombre");
     }
 
     public void listaAlumnosPorEdad(ArrayList<Alumno> al) {
         System.out.println("lista alumnos por edad");
+        al.sort(ca);
     }
-    
+    public static Comparator<Alumno> ca = new Comparator<Alumno>() {
+        @Override
+        public int compare(Alumno a1, Alumno a2) {
+//            if (a1.getEdad() < a2.getEdad()) {
+//                return -1;
+//            } else if (a1.getEdad() > a2.getEdad()) {
+//                return 1;
+//            } else {
+//                return 0;
+//            }
+            return a2.getNombre().compareTo(a1.getNombre());
+        }
+    };
 }
