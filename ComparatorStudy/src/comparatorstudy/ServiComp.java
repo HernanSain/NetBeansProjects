@@ -29,10 +29,32 @@ public class ServiComp {
         g.sort(cn);
         ordenaGente(g);
     }
+   
+    public void ordenaPorEdad(ArrayList<Gente> g){
+        g.sort(ce);
+        ordenaGente(g);
+    }
+    
+    //Comparator por String
     public static Comparator<Gente> cn = new Comparator<Gente>() {
         @Override
         public int compare(Gente g1, Gente g2){
             return g1.getNombre().compareTo(g2.getNombre());
+        }
+    };
+    
+    //Comparator by age
+    public static Comparator<Gente> ce = new Comparator<Gente>(){
+        @Override
+        public int compare(Gente g1, Gente g2){
+            if (g1.getEdad()<g2.getEdad()){
+                return -1;
+            }
+            if(g1.getEdad()>g2.getEdad()){
+                return 1;
+            }else{
+                return 0;
+            }
         }
     };
     

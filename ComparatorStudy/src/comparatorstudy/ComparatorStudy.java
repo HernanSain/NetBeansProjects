@@ -50,6 +50,9 @@ public class ComparatorStudy {
         System.out.println("");
         
         sc.ordenaPorNombre(g);
+        
+        System.out.println("");
+        sc.ordenaPorEdad(g);
 
     }
 
