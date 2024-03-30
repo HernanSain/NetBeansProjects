@@ -22,6 +22,7 @@ public class RegExpStudy {
 
         Matcher matcher = pattern.matcher("me cago en la concha de la lora puta ");
         System.out.println(matcher.find());
+
     }
 
 }
