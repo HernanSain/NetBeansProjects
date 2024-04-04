@@ -31,6 +31,7 @@ public class Colegio {
                         menu=0;
                         break;
                     case 3:
+                        
                         menu=0;
                         break;
                     case 4:

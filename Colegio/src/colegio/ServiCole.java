@@ -6,8 +6,11 @@
 package colegio;
 
 import colegio.dominio.Curso;
+import colegio.dominio.Estudiante;
 import colegio.dominio.Profesor;
 import colegio.persistencia.DAOCurso;
+import colegio.persistencia.DAOEstudiante;
+import colegio.persistencia.DAOProfesor;
 import java.util.Scanner;
 
 /**
@@ -30,8 +33,7 @@ public class ServiCole {
                         System.out.println("Curso:");
                         c.setCurso(leer.next());
                         String cur = c.getCurso();
-                        String sql = "insert into cursos (curso) values ('"
-                                + cur + "');";
+                        String sql = "insert into cursos (curso) values ('" + cur + "');";
                         DAOCurso dc = new DAOCurso();
                         dc.nuevoCurso(sql);
                         m = 0;
@@ -42,12 +44,20 @@ public class ServiCole {
                         System.out.println("Profesor: ");
                         p.setProfesor(leer.next());
                         String prf = p.getProfesor();
-                        sql = "insert into profesores (profesor)values('"+prf+"');";
-                        
+                        sql = "insert into profesores (profesor) values('" + prf + "');";
+                        DAOProfesor dp = new DAOProfesor();
+                        dp.nuevoProfesor(sql);
                         m = 0;
                         break;
 
                     case 3:
+                        Estudiante e = new Estudiante();
+                        System.out.println("Estudiante:");
+                        e.setEstudiante(leer.next());
+                        String est = e.getEstudiante();
+                        sql = "insert into estudiantes (estudiante) values('" + est + "');";
+                        DAOEstudiante de = new DAOEstudiante();
+                        de.nuevoEstudiante(sql);
                         m = 0;
                         break;
                     case 4:
