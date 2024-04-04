@@ -38,4 +38,43 @@ public class DAO {
         }
     }
 
+    public void desconectDB() throws Exception {
+        try {
+            conectDB();
+            if (res != null) {
+                res.close();
+            }
+            if (stm != null) {
+                stm.close();
+            }
+            if (con != null){
+                con.close();
+            }
+        } catch (Exception e) {
+        }
+    }
+    
+    public void alterDB(String sql)throws Exception{
+        try {
+            conectDB();
+            stm = con.createStatement();
+            stm.execute(sql);
+            desconectDB();
+        } catch (SQLException e) {
+            con.rollback();
+            throw e;
+        }
+    }
+    
+    public void queryDB(String sql)throws Exception{
+        try {
+        conectDB();
+        stm = con.createStatement();
+        res = stm.executeQuery(sql);
+        desconectDB();
+        } catch (Exception e) {
+        }
+        
+    }
+
 }

@@ -5,14 +5,47 @@
  */
 package colegio;
 
+import java.util.Scanner;
 
 public class Colegio {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
+    static Scanner leer = new Scanner(System.in);
 
+    public static void main(String[] args) {
+        ServiCole sc = new ServiCole();
+
+        int menu = 0;
+        while (menu == 0)
+        {
+            try {
+                System.out.println("1:nuevo ; 2:altera ; 3:consulta");
+
+                menu = leer.nextInt();
+                switch (menu) {
+
+                    case 1:
+                        menu=0;
+                        sc.nuevo();
+                        break;
+                    case 2:
+                        menu=0;
+                        break;
+                    case 3:
+                        menu=0;
+                        break;
+                    case 4:
+                        menu = 99;
+                        break;
+                    default:
+                        menu=0;
+                        break;
+                                
+                }
+            } catch (Exception e) {
+                leer.nextLine();
+                menu=0;
+            }
+        }
     }
-    
+
 }
