@@ -26,8 +26,13 @@ public class MonoCole {
             con=DriverManager.getConnection("jdbc:mysql://localhost:3306/colegio?zeroDateTimeBehavior=convertToNull");
             stm = con.createStatement();
         
-            stm.execute("");
-            rst.next();
+            stm.execute("select * from cursos");
+            int col = rst.getMetaData().getColumnCount();
+            
+            String[] res = new String[col];
+            while(rst.next()){
+                System.out.println(rst.getArray(2));
+            }
 
         } catch (Exception e) {
         }
