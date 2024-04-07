@@ -28,9 +28,15 @@ public class DAOInt extends DAO {
     public void lista(String sql) throws Exception {
         try {
             conectDB();
-            PreparedStatement prst = con.prepareStatement(sql);
-            rst = stm.executeQuery(sql);
-            System.out.println(prst.getMetaData().getColumnName(2));
+            PreparedStatement pstm = con.prepareStatement(sql);
+            pstm.execute(sql);
+            int c = pstm.getMetaData().getColumnCount();
+            for (int i = 1; i <= c; i++) {
+                String x =pstm.getMetaData().getColumnName(i);
+                System.out.println(x);
+            }
+            
+
             desconectDB();
         } catch (SQLException e) {
             throw e;

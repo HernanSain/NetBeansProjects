@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package borrar;
+package eurekabank;
 
 /**
  *
  * @author john
  */
-public class Borrar {
+public class EurekaBank {
 
     /**
      * @param args the command line arguments
