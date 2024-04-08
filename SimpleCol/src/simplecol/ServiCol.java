@@ -8,6 +8,7 @@ package simplecol;
 import entities.Curso;
 import entities.Estudiante;
 import entities.Profesor;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ServiCol {
