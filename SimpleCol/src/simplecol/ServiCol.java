@@ -76,6 +76,9 @@ public class ServiCol {
                         menu = 0;
                         break;
                     case 2:
+                        sql = "select * from profesores";
+                        di.lista(sql);
+                        System.out.println("");
                         menu = 0;
                         break;
                     case 3:
