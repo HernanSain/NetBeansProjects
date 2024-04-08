@@ -71,6 +71,7 @@ public class ServiCol {
                     case 1:
                         String sql = "select * from cursos ";
                         di.lista(sql);
+                        System.out.println("");
                         menu = 0;
                         break;
                     case 2:
