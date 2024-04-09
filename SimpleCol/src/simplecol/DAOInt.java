@@ -64,5 +64,9 @@ public class DAOInt extends DAO {
         }
 
     }
+    
+    public void borra(String cursoABorrar){
+        String sql="delete";
+    }
 
 }

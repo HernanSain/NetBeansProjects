@@ -11,7 +11,7 @@ import entities.Profesor;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class ServiCol {
+public class ServiCol  {
 
     static Scanner leer = new Scanner(System.in).useDelimiter("\n");
 
@@ -66,7 +66,7 @@ public class ServiCol {
         int menu = 0;
         while (menu == 0) {
             try {
-                System.out.println("1: cursos  2:profesores  3:alumnos  4:volver");
+                System.out.println("1: cursos  2:profesores  3:estudiantes  4:volver");
                 menu = leer.nextInt();
                 switch (menu) {
                     case 1:
@@ -82,6 +82,9 @@ public class ServiCol {
                         menu = 0;
                         break;
                     case 3:
+                        sql = "select * from estudiantes";
+                        di.lista(sql);
+                        System.out.println("");
                         menu = 0;
                         break;
                     case 4:
@@ -93,6 +96,42 @@ public class ServiCol {
                 menu = 0;
             }
         }
+
+    }
+
+    public void borra() {
+        int menu = 0;
+        try {
+            while (menu == 0) {
+                System.out.println("1:curso  2:profesor  3:estudiante  4:volver ");
+                menu=leer.nextInt();
+                switch(menu){
+                    case 1:
+                        DAOInt di = new DAOInt();
+                        String sql = "select * from cursos";
+                        di.lista(sql);
+                        System.out.println("curso a borrar: ");
+                        String borraCurso = leer.next();
+                        
+                        menu=0;
+                        break;
+                    case 2:
+                        menu=0;
+                        break;
+                    case 3:
+                        menu=0;
+                        break;
+                    case 4:
+                        menu=80;
+                        break;
+                        
+                }
+
+            }
+
+        } catch (Exception e) {
+        }
+        menu = leer.nextInt();
 
     }
 }

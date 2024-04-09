@@ -26,6 +26,8 @@ public class SimpleCol {
                         menu = 0;
                         break;
                     case 2:
+                        Altero a = new Altero();
+                        a.queAltero();
                         menu = 0;
                         break;
                     case 3:
