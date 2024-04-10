@@ -23,6 +23,8 @@ public class ColeSim {
         int accion = 0;
         int tabla = 0;
         Literal lt = new Literal();
+        DAOInt di = new DAOInt();
+        
         while (menu == 0) {
             try {
                 System.out.println("1:Nuevo  2:Listado 3:Modificacion  4:Confirma ");
@@ -32,16 +34,19 @@ public class ColeSim {
                     case 1:
                         accion = 1;
                         tabla = m2.opcionMenu2();
+                        di.nuevo(tabla);
                         menu = 0;
                         break;
                     case 2:
                         accion = 2;
                         tabla = m2.opcionMenu2();
+                        di.lista(tabla);
                         menu = 0;
                         break;
                     case 3:
                         accion = 3;
                         tabla = m2.opcionMenu2();
+                        di.modifica(tabla);
                         menu = 0;
                         break;
                     case 4:
@@ -54,20 +59,18 @@ public class ColeSim {
             }
         }
 
-    
-        DAOInt di = new DAOInt();
-        switch (accion) {
-            case 1:
-                di.nuevo(tabla);
-                break;
-            case 2:
-                di.lista(tabla);
-                break;
-            case 3:
-                di.modifica(tabla);
-                break;
-        }
-
+//        DAOInt di = new DAOInt();
+//        switch (accion) {
+//            case 1:
+//                di.nuevo(tabla);
+//                break;
+//            case 2:
+//                di.lista(tabla);
+//                break;
+//            case 3:
+//                di.modifica(tabla);
+//                break;
+//        }
     }
 
 }
