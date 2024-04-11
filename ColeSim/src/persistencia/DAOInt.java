@@ -6,6 +6,10 @@
 package persistencia;
 
 import colesim.Literal;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 /**
@@ -47,10 +51,68 @@ public class DAOInt extends DAO {
     }
 
     public void lista(int tabla) {
-        System.out.println("lista " + lt.literalTabla(tabla));
+        System.out.println("lista  " + lt.literalTabla(tabla));
+        ArrayList<String> lst = new ArrayList<String>();
+        try {
+            conectDB();
+            String sql = "select * from " + lt.literalTabla(tabla) + ";";
+            PreparedStatement pstm = con.prepareStatement(sql);
+            pstm.execute(sql);
+            rst = pstm.getResultSet();
+            int c = pstm.getMetaData().getColumnCount();
+
+            while (rst.next()) {
+                for (int i = 1; i < c; i++) {
+                    String[] s = new String[c];
+                    s[i] = rst.getString(i);
+                    lst.add(s[i]);
+                }
+                lst.add(rst.getString(c));
+            }
+            int contador = 1;
+            Iterator it = lst.iterator();
+            while (it.hasNext()) {
+                System.out.print(it.next() + "-");
+                contador++;
+                if (contador > c) {
+                    System.out.println("");
+                    contador = 1;
+                }
+            }
+
+            desconectDB();
+        } catch (Exception e) {
+        }
     }
 
-    public void modifica(int tabla) {
+    public void modifica(int tabla) throws Exception {
         System.out.println("modifica " + lt.literalTabla(tabla));
+        lista(tabla);
+        System.out.println("id a modificar");
+        int id = leer.nextInt();
+        try {
+            conectDB();
+
+            String sql = "select * from " + lt.literalTabla(tabla) + ";";
+            PreparedStatement pstm = con.prepareStatement(sql);
+            pstm.execute(sql);
+            rst = pstm.getResultSet();
+            int c = rst.getMetaData().getColumnCount();
+            while (rst.next()) {
+                for (int i = 1; i < c; i++) {
+                    String[] s = new String[c];
+                    s[i] = rst.getString(i);
+
+                }
+            }
+
+            System.out.println("algo");
+            desconectDB();
+        } catch (SQLException e) {
+            System.out.println("ta mal!");
+            throw e;
+
+        }
+
     }
 }

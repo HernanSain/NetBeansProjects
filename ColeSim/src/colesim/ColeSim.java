@@ -24,11 +24,11 @@ public class ColeSim {
         int tabla = 0;
         Literal lt = new Literal();
         DAOInt di = new DAOInt();
-        
+
         while (menu == 0) {
             try {
-                System.out.println("1:Nuevo  2:Listado 3:Modificacion  4:Confirma ");
-                System.out.println(lt.literal(accion, tabla));
+                System.out.println("1:Nuevo  2:Listado 3:Modificacion  4:Salir ");
+//                System.out.println(lt.literal(accion, tabla));
                 menu = leer.nextInt();
                 switch (menu) {
                     case 1:
