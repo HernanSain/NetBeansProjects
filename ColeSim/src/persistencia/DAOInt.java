@@ -87,7 +87,7 @@ public class DAOInt extends DAO {
     public void modifica(int tabla) throws Exception {
         System.out.println("modifica " + lt.literalTabla(tabla));
         //menu actualiza / borra
-        ListaTabla lt = new ListaTabla();
+        ServiTabla lt = new ServiTabla();
         int menu = 0;
         while (menu == 0) {
             try {
@@ -99,6 +99,7 @@ public class DAOInt extends DAO {
                         menu = 10;
                         break;
                     case 2:
+                        lt.borraTabla(tabla);
                         menu = 10;
                         break;
                     case 3:
