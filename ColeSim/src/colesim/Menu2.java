@@ -34,6 +34,8 @@ public class Menu2 {
 
                 }
             } catch (Exception e) {
+                leer.nextLine();
+                menu2=0;
             }
         }
 

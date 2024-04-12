@@ -64,13 +64,13 @@ public String literalTabla(int tabla){
         String ltTabla="";
         switch(tabla){
             case 1:
-                ltTabla="Cursos";
+                ltTabla="cursos";
                 break;
             case 2:
-                ltTabla="Profesores";
+                ltTabla="profesores";
                 break;
             case 3:
-                ltTabla="Estudiantes";
+                ltTabla="estudiantes";
                 break;
                 
         }

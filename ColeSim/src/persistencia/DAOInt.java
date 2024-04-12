@@ -79,7 +79,6 @@ public class DAOInt extends DAO {
                     contador = 1;
                 }
             }
-
             desconectDB();
         } catch (Exception e) {
         }
@@ -87,31 +86,30 @@ public class DAOInt extends DAO {
 
     public void modifica(int tabla) throws Exception {
         System.out.println("modifica " + lt.literalTabla(tabla));
-        lista(tabla);
-        System.out.println("id a modificar");
-        int id = leer.nextInt();
-        try {
-            conectDB();
-
-            String sql = "select * from " + lt.literalTabla(tabla) + ";";
-            PreparedStatement pstm = con.prepareStatement(sql);
-            pstm.execute(sql);
-            rst = pstm.getResultSet();
-            int c = rst.getMetaData().getColumnCount();
-            while (rst.next()) {
-                for (int i = 1; i < c; i++) {
-                    String[] s = new String[c];
-                    s[i] = rst.getString(i);
-
+        //menu actualiza / borra
+        ListaTabla lt = new ListaTabla();
+        int menu = 0;
+        while (menu == 0) {
+            try {
+                System.out.println("1: modifica 2:borra 3:vuelve");
+                menu=leer.nextInt();
+                switch (menu) {
+                    case 1:
+                       lt.listaTabla(tabla);
+                        menu = 10;
+                        break;
+                    case 2:
+                        menu = 10;
+                        break;
+                    case 3:
+                        menu = 30;
+                        break;
                 }
+            } catch (Exception e) {
+                System.out.println("debe ser un entero ");
+                menu = 0;
+                leer.nextLine();
             }
-
-            System.out.println("algo");
-            desconectDB();
-        } catch (SQLException e) {
-            System.out.println("ta mal!");
-            throw e;
-
         }
 
     }
