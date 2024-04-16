@@ -50,7 +50,7 @@ public class DAOInt extends DAO {
         }
     }
 
-    public void lista(int tabla) {
+    public void lista(int tabla) throws Exception {
         System.out.println("lista  " + lt.literalTabla(tabla));
         ArrayList<String> lst = new ArrayList<String>();
         try {
@@ -58,17 +58,17 @@ public class DAOInt extends DAO {
             String sql = "select * from " + lt.literalTabla(tabla) + ";";
             PreparedStatement pstm = con.prepareStatement(sql);
             pstm.execute(sql);
-            rst = pstm.getResultSet();
             int c = pstm.getMetaData().getColumnCount();
-
+            rst = pstm.getResultSet();
             while (rst.next()) {
                 for (int i = 1; i < c; i++) {
                     String[] s = new String[c];
                     s[i] = rst.getString(i);
                     lst.add(s[i]);
                 }
-                lst.add(rst.getString(c));
+
             }
+            System.out.println(lst);
             int contador = 1;
             Iterator it = lst.iterator();
             while (it.hasNext()) {
@@ -80,7 +80,8 @@ public class DAOInt extends DAO {
                 }
             }
             desconectDB();
-        } catch (Exception e) {
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
         }
     }
 
@@ -92,10 +93,10 @@ public class DAOInt extends DAO {
         while (menu == 0) {
             try {
                 System.out.println("1: modifica 2:borra 3:vuelve");
-                menu=leer.nextInt();
+                menu = leer.nextInt();
                 switch (menu) {
                     case 1:
-                       lt.listaTabla(tabla);
+                        lt.listaTabla(tabla);
                         menu = 10;
                         break;
                     case 2:

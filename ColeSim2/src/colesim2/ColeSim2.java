@@ -1,34 +1,35 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+perfected version of ColeSim 
  */
-package colesim;
+package colesim2;
 
+import ServiCole.Menu2;
+import ServiCole.PrintList;
+import java.util.ArrayList;
 import java.util.Scanner;
 import persistencia.DAOInt;
 
-/**
- *
- * @author john
- */
-public class ColeSim {
+public class ColeSim2 {
 
     static Scanner leer = new Scanner(System.in);
 
     public static void main(String[] args) {
 //elije acction
+
         int menu = 0;
         Menu2 m2 = new Menu2();
         int accion = 0;
         int tabla = 0;
-        Literal lt = new Literal();
+
         DAOInt di = new DAOInt();
+        PrintList pl = new PrintList();
 
         while (menu == 0) {
             try {
-                System.out.println("1:Nuevo  2:Listado 3:Modificacion  4:Salir ");
-//                System.out.println(lt.literal(accion, tabla));
+                System.out.println("1:Nuevo  2:Listado 3:Modificacion  4:"
+                        + "Curso elije Profesor 5:Estudiante elije Curso "
+                        + "6:Salir ");
+
                 menu = leer.nextInt();
                 switch (menu) {
                     case 1:
@@ -40,7 +41,8 @@ public class ColeSim {
                     case 2:
                         accion = 2;
                         tabla = m2.opcionMenu2();
-                        di.lista(tabla);
+                        ArrayList<String> lst=di.lista(tabla);
+                        pl.printList(lst);
                         menu = 0;
                         break;
                     case 3:
@@ -49,7 +51,13 @@ public class ColeSim {
                         di.modifica(tabla);
                         menu = 0;
                         break;
-                    case 4:
+                    case 4: //Curso elije Profesor
+                        di.cursoProfesor();
+                        break;
+                    case 5://estudiante elije Curso
+                        
+                        break;
+                    case 6:
                         menu = 9;
                         break;
                 }
@@ -58,7 +66,6 @@ public class ColeSim {
                 leer.nextLine();
             }
         }
-
 
     }
 
