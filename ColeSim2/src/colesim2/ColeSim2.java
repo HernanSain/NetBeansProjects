@@ -42,7 +42,6 @@ public class ColeSim2 {
                         accion = 2;
                         tabla = m2.opcionMenu2();
                         ArrayList<String> lst=di.lista(tabla);
-                        pl.printList(lst);
                         menu = 0;
                         break;
                     case 3:

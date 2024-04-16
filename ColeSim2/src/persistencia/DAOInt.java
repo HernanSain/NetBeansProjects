@@ -56,9 +56,21 @@ public class DAOInt extends DAO {
                 lst.add(rst.getString(c));
             }
 
+            Iterator it = lst.iterator();
+            int contador = 1;
+            while (it.hasNext()) {
+                System.out.print(it.next() + "_");
+                contador++;
+                if (contador > c) {
+                    System.out.println("");
+                    contador = 1;
+                }
+            }
+
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+
         return lst;
     }
 
@@ -93,14 +105,13 @@ public class DAOInt extends DAO {
         try {
 
             System.out.println("Elija curso");
-            int curso=leer.nextInt();
+            int curso = leer.nextInt();
             tabla = 2;
             lista(tabla);
-            
+
             System.out.println("Elija Profesor");
-            int profesor=leer.nextInt();
-            
-            
+            int profesor = leer.nextInt();
+
         } catch (Exception e) {
         }
 
