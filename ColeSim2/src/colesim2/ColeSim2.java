@@ -4,7 +4,6 @@ perfected version of ColeSim
 package colesim2;
 
 import ServiCole.Menu2;
-import ServiCole.PrintList;
 import java.util.ArrayList;
 import java.util.Scanner;
 import persistencia.DAOInt;
@@ -22,7 +21,6 @@ public class ColeSim2 {
         int tabla = 0;
 
         DAOInt di = new DAOInt();
-        PrintList pl = new PrintList();
 
         while (menu == 0) {
             try {
@@ -41,7 +39,8 @@ public class ColeSim2 {
                     case 2:
                         accion = 2;
                         tabla = m2.opcionMenu2();
-                        ArrayList<String> lst=di.lista(tabla);
+                        ArrayList<String> lst = new ArrayList<String>();
+                        di.lista(tabla);
                         menu = 0;
                         break;
                     case 3:
@@ -54,7 +53,7 @@ public class ColeSim2 {
                         di.cursoProfesor();
                         break;
                     case 5://estudiante elije Curso
-                        
+
                         break;
                     case 6:
                         menu = 9;

@@ -38,7 +38,7 @@ public class DAOInt extends DAO {
         }
     }
 
-    public ArrayList<String> lista(int tabla) {
+    public void lista(int tabla) {
         ArrayList<String> lst = new ArrayList<String>();
         String sql = "select * from " + lt.literalTabla(tabla) + ";";
         try {
@@ -71,7 +71,6 @@ public class DAOInt extends DAO {
             System.out.println(e.getMessage());
         }
 
-        return lst;
     }
 
     public void modifica(int tabla) throws Exception {
@@ -100,18 +99,16 @@ public class DAOInt extends DAO {
     }
 
     public void cursoProfesor() {
-        int tabla = 1;
-        lista(tabla);
+
         try {
+            conectDB();
+            int tabla = 1;
 
             System.out.println("Elija curso");
             int curso = leer.nextInt();
-            tabla = 2;
-            lista(tabla);
 
-            System.out.println("Elija Profesor");
-            int profesor = leer.nextInt();
-
+           
+            desconectDB();
         } catch (Exception e) {
         }
 
